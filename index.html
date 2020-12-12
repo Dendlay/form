@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "preconnect" href="https://fonts.gstatic.com"> 
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="D:\javascript\website2.css">
+</head>
+<body>
+    <div class="form-container">
+        <h3 class=form-heading>Форма</h3>
+        <form action="https://getsimpleform.com/messages?form_api_token=12db7fad5dd74cdb466c8e276d809fe6" method='post' id="form">
+            <input type="hidden" name='redirect_to' value="https://fonts.google.com/?preview.text=hello&preview.text_type=custom&query=suns">
+            <div class="field">
+                <label for="name" class="name">Имя</label>
+                <input type="name" name='name' id="name">
+            </div>
+            <div class="field">
+                <label for="email" class="email">E-mail</label>
+                <input type="email" name='email' id="email" >
+            </div>
+            <input type="submit" id="submit" value='Отправить'>
+        </form>  
+        
+        
+</body>
+
+<script>
+
+    let inputs = document.
+       querySelectorAll('input');
+       
+       for(let i = 0; i < inputs.length; i++) {
+           if (inputs[i].getAttribute('type') != 'submit'){
+            inputs[i].addEventListener('focusin', FocusInInputHandler);
+            inputs[i].addEventListener('focusout', FocusOutInputHandler);
+       }}
+    
+             function FocusInInputHandler(){
+          console.log(this.id + ' focus in ');
+          let label  = document.
+          querySelector('label[for="' + this.id + '"]')
+          label.classList.add('focused')
+             }
+    
+             function FocusOutInputHandler(){
+          console.log(this.id + ' focus out ');
+          let label  = document.
+          querySelector('label[for="' + this.id + '"]')
+          label.classList.remove('focused')}
+             
+    
+    
+            </script>
+
+</html>
